@@ -1,0 +1,73 @@
+{
+    "name": "vortech/laravel-factor",
+    "description": "Exact, arbitrary-precision math for Laravel: symbolic differentiation, numeric integration and equation solving.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "math",
+        "calculus",
+        "derivative",
+        "integral",
+        "equation",
+        "precision",
+        "bcmath",
+        "rational"
+    ],
+    "homepage": "https://github.com/Vortech-Group/factor",
+    "authors": [
+        {
+            "name": "Mate Papp",
+            "email": "mate@vortech.hu",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-bcmath": "*",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.13",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^4.0|^5.0",
+        "pestphp/pest-plugin-laravel": "^4.0|^5.0",
+        "phpstan/phpstan-strict-rules": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vortech\\Factor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vortech\\Factor\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vortech\\Factor\\FactorServiceProvider"
+            ],
+            "aliases": {
+                "Factor": "Vortech\\Factor\\Facades\\Factor"
+            }
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "lint": "pint",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
